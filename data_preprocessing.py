@@ -25,7 +25,7 @@ def generator(data, lookback, delay, min_index, max_index, shuffle=False, batch_
             i += len(rows)
         samples = np.zeros((len(rows), lookback // step, data.shape[-1]))
         targets = np.zeros((len(rows),))
-        for j, row in enumerate(rows):
+        for j, _ in enumerate(rows):
             indices = range(rows[j] - lookback, rows[j], step)
             samples[j] = data[indices]
             targets[j] = data[rows[j] + delay][1]
