@@ -9,7 +9,7 @@ def train_model():
     train_gen, val_gen, _, val_steps, _ = generate()
 
     checkpoint = ModelCheckpoint("models/best_model.h5", save_best_only=True)
-    hist = model.fit_generator(train_gen, steps_per_epoch=500, epochs=5, validation_data=val_gen, validation_steps=val_steps, callbacks=[checkpoint])
+    hist = model.fit_generator(train_gen, steps_per_epoch=500, epochs=10, validation_data=val_gen, validation_steps=val_steps, callbacks=[checkpoint])
     
     return hist
 
